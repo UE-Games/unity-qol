@@ -9,7 +9,7 @@ namespace UniEnt.UnityQOL.Runtime {
 
         // Check to see if we're about to be destroyed.
         // ReSharper disable once StaticMemberInGenericType
-        static readonly object SLock = new object();
+        static readonly object SLock = new();
         static T _sInstance;
 
 

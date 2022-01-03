@@ -1,0 +1,24 @@
+{
+    "name": "com.unient.unity-qol",
+    "version": "1.0.0",
+    "displayName": "UniEntUnityQOL",
+    "description": "Universal Entities Quality of Life Unity Tools",
+    "license": "MIT",
+    "unity": "2019.3",
+    "unityRelease": "0f3",
+    "dependencies": {},
+    "keywords": [
+        "tool",
+        "debug"
+    ],
+    "authors": [
+        {
+            "name": "Vaclav Vancura",
+            "url": "https://github.com/vancura"
+        },
+        {
+            "name": "Anthony S",
+            "url": "https://github.com/acyprus"
+        }
+    ]
+}

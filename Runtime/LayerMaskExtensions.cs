@@ -6,7 +6,7 @@ using UnityEngine;
 // ReSharper disable MemberCanBeInternal
 
 
-namespace UniEnt.UnityQOL.Runtime {
+namespace UniEnt.Unity_QOL.Runtime {
 
 
     public static class LayerMaskExtensions {

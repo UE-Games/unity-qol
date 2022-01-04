@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-namespace UniEnt.UnityQOL.Runtime {
+namespace UniEnt.Unity_QOL.Runtime {
 
 
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour {

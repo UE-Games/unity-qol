@@ -4,7 +4,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 
-namespace UniEnt.UnityQOL.Runtime {
+namespace UniEnt.Unity_QOL.Runtime {
 
 
     public sealed class RandomAnimationFrame : MonoBehaviour {

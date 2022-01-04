@@ -4,7 +4,7 @@ using UnityEngine;
 #endif
 
 
-namespace UniEnt.UnityQOL.Runtime {
+namespace UniEnt.Unity_QOL.Runtime {
 
 
     static class VLog {

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-namespace UniEnt.UnityQOL.Runtime {
+namespace UniEnt.Unity_QOL.Runtime {
 
 
     static class SafeScene {

@@ -7,7 +7,7 @@ using UnityEditor;
 #endif
 
 
-namespace UniEnt.UnityQOL.Runtime {
+namespace UniEnt.Unity_QOL.Runtime {
 
 
     public static class PrefabNameRevert {

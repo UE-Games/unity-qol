@@ -1,13 +1,15 @@
-using UnityEditor;
 using UnityEngine;
+
 #if UNITY_EDITOR
+using UnityEditor;
 #endif
 
 
 namespace UniEnt.Unity_QOL.Runtime {
 
 
-    static class VLog {
+    // ReSharper disable once MemberCanBeInternal
+    public static class VLog {
 
 
         const string PurpleLightColor = "724972";
@@ -81,6 +83,7 @@ namespace UniEnt.Unity_QOL.Runtime {
         }
 
 
+        // ReSharper disable once MemberCanBeInternal
         /// <summary>
         ///     Log something as a warning.
         /// </summary>

@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 namespace UniEnt.Unity_QOL.Runtime {
 
 
-    static class SafeScene {
     // ReSharper disable once UnusedType.Global
+    public static class SafeScene {
 
 
         // ReSharper disable once UnusedMember.Global

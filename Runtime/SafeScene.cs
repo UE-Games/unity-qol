@@ -118,10 +118,7 @@ namespace UniEnt.Unity_QOL.Runtime {
         public static bool IsSceneLoaded(string id) {
             Scene scene = SceneManager.GetSceneByName(id);
 
-            if (scene == null)
-                return false;
-
-            return scene.isLoaded;
+            return scene.IsValid() && scene.isLoaded;
         }
 
 

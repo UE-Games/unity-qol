@@ -7,8 +7,10 @@ namespace UniEnt.Unity_QOL.Runtime {
 
 
     static class SafeScene {
+    // ReSharper disable once UnusedType.Global
 
 
+        // ReSharper disable once UnusedMember.Global
         /// <summary>
         ///     Unload a scene the safest way possible.
         /// </summary>
@@ -39,6 +41,7 @@ namespace UniEnt.Unity_QOL.Runtime {
         }
 
 
+        // ReSharper disable once UnusedMember.Global
         /// <summary>
         ///     Unload unused assets. Used usually after unloading a scene.
         ///     This is really just a shortcut to Resources.UnloadUnusedAssets, except it also provides a useful
@@ -71,6 +74,7 @@ namespace UniEnt.Unity_QOL.Runtime {
         }
 
 
+        // ReSharper disable once UnusedMember.Global
         /// <summary>
         ///     Load a scene the safest way possible.
         /// </summary>
@@ -105,6 +109,7 @@ namespace UniEnt.Unity_QOL.Runtime {
         }
 
 
+        // ReSharper disable once UnusedMember.Global
         /// <summary>
         ///     Check if the scene is currently loaded.
         /// </summary>

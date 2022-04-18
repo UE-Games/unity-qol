@@ -4,6 +4,7 @@ using UnityEngine;
 namespace UniEnt.Unity_QOL.Runtime {
 
 
+    // ReSharper disable once ClassCanBeSealed.Global
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour {
 
 

@@ -80,10 +80,12 @@ namespace UniEnt.Unity_QOL.Runtime {
         /// </summary>
         /// <param name="id">Scene ID to load.</param>
         /// <param name="force">true if there is no need to wait for the scene activation.</param>
-        public static IEnumerator Load(string id, bool force = false) {
+        /// <param name="sceneMode">Scene load mode, Additive by default.</param>
+        /// <seealso cref="LoadSceneMode" />
+        public static IEnumerator Load(string id, bool force = false, LoadSceneMode sceneMode = LoadSceneMode.Additive) {
             Debug.Log(force ? $"Scene load '{id}' in force mode" : $"Scene load '{id}'");
 
-            AsyncOperation task = SceneManager.LoadSceneAsync(id, LoadSceneMode.Additive);
+            AsyncOperation task = SceneManager.LoadSceneAsync(id, sceneMode);
 
             if (!force)
                 task.allowSceneActivation = false;

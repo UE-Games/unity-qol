@@ -16,25 +16,16 @@ namespace UniEnt.Unity_QOL.Runtime {
 
         // ReSharper disable once MemberCanBeInternal
         /// <summary>
-        ///     Access singleton instance through this propriety.
+        ///     Access singleton instance through this property.
         /// </summary>
+        /// <remarks>This instance will persist across scene changes.</remarks>
         public static T Instance {
             get {
                 lock (SLock) {
                     if (_sInstance != null)
                         return _sInstance;
 
-                    // Search for existing instance.
-                    _sInstance = (T)FindObjectOfType(typeof(T));
-
-                    // Create new instance if one doesn't already exist.
-                    if (_sInstance != null)
-                        return _sInstance;
-
-                    // Need to create a new GameObject to attach the singleton to.
-                    var singletonObject = new GameObject();
-                    _sInstance = singletonObject.AddComponent<T>();
-                    singletonObject.name = typeof(T) + " (Singleton)";
+                    CreateInstance(out GameObject singletonObject);
 
                     // Make instance persistent.
                     DontDestroyOnLoad(singletonObject);
@@ -45,9 +36,49 @@ namespace UniEnt.Unity_QOL.Runtime {
         }
 
 
+        // ReSharper disable once MemberCanBeInternal
+        /// <summary>
+        ///     Access non persistent singleton instance through this property.
+        /// </summary>
+        /// <remarks>This instance will not persist across scene changes.</remarks>
+        public static T NonPersistentInstance {
+            get {
+                lock (SLock)
+                    return _sInstance != null ? _sInstance : CreateInstance(out GameObject _);
+            }
+        }
+
+
         void OnDestroy() {
             lock (SLock)
                 _sInstance = null;
+        }
+
+
+        /// <summary>
+        ///     Create a singleton instance and attach to a dedicated GameObject.
+        /// </summary>
+        static T CreateInstance(out GameObject singletonObject) {
+            lock (SLock) {
+                // Search for existing instance.
+                _sInstance = (T)FindObjectOfType(typeof(T));
+
+                // Use existing instance or create a new one if it doesn't already exist.
+                if (_sInstance != null) {
+                    singletonObject = _sInstance.gameObject;
+
+                    return _sInstance;
+                }
+
+                // Create a new GameObject and attach the singleton to it.
+                singletonObject = new GameObject {
+                    name = typeof(T) + " (Singleton)"
+                };
+
+                _sInstance = singletonObject.AddComponent<T>();
+
+                return _sInstance;
+            }
         }
 
 

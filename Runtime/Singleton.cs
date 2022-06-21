@@ -55,6 +55,9 @@ namespace UniEnt.Unity_QOL.Runtime {
         }
 
 
+        /// <summary>
+        ///     Create a singleton instance and attach to a dedicated GameObject.
+        /// </summary>
         static T CreateInstance(out GameObject singletonObject) {
             lock (SLock) {
                 // Search for existing instance.

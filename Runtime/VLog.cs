@@ -1,7 +1,7 @@
 using System;
 using JetBrains.Annotations;
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
 
 namespace UniEnt.Unity_QOL.Runtime {
@@ -151,6 +151,9 @@ namespace UniEnt.Unity_QOL.Runtime {
         #region Color Getters
 
 
+        #if UNITY_EDITOR
+
+
         [NotNull] static string PurpleColor => EditorGUIUtility.isProSkin ? PurpleDarkColor : PurpleLightColor;
 
         [NotNull] static string ThistleColor => EditorGUIUtility.isProSkin ? ThistleDarkColor : ThistleLightColor;
@@ -174,6 +177,9 @@ namespace UniEnt.Unity_QOL.Runtime {
         [NotNull] static string TerracottaColor => EditorGUIUtility.isProSkin ? TerracottaDarkColor : TerracottaLightColor;
 
         [NotNull] static string FawnColor => EditorGUIUtility.isProSkin ? FawnDarkColor : FawnLightColor;
+
+
+        #endif // UNITY_EDITOR
 
 
         #endregion Color Getters

@@ -148,6 +148,19 @@ namespace UniEnt.Unity_QOL.Runtime {
         }
 
 
+        /// <summary>
+        ///     Log a level line.
+        /// </summary>
+        /// <param name="line">Line to print</param>
+        public static void Level(string line) {
+            #if UNITY_EDITOR
+            Debug.Log($"<color=#{SapphireColor}><b>{line}</b></color>");
+            #else
+            Debug.Log(line);
+            #endif
+        }
+
+
         #region Color Getters
 
 
